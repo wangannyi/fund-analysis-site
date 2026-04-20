@@ -81,7 +81,7 @@ app.get('/{*path}', (req, res) => {
 });
 
 // 定时任务：每天早上10点刷新数据并推送邮件
-cron.schedule('0 10 * * 1-5', async () => {
+cron.schedule('0 10 * * *', async () => {
   console.log(`[定时任务] ${new Date().toISOString()} 开始每日刷新...`);
   const fundsData = await scrapeAndSave();
   if (fundsData) {

@@ -65,12 +65,12 @@ function buildEmailHtml(fundsData, adviceData) {
   </div>
 
   <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:20px;margin-bottom:20px">
-    <h2 style="margin:0 0 12px;font-size:18px;color:#0f172a">💡 今日投资建议（均衡型 / ${balanced.totalAmount.toLocaleString()}元）</h2>
+    <h2 style="margin:0 0 12px;font-size:18px;color:#0f172a">💡 今日投资建议（均衡型 / ${balanced.etfBudget.toLocaleString()}元）</h2>
     <table style="border-collapse:collapse;width:100%;font-size:14px">
       <tr style="background:#f1f5f9"><th style="padding:6px 8px;text-align:left">代码</th><th style="padding:6px 8px;text-align:left">名称</th><th style="padding:6px 8px;text-align:left">行业</th><th style="padding:6px 8px;text-align:left">建议金额</th><th style="padding:6px 8px;text-align:left">理由</th></tr>
       ${adviceRows}
     </table>
-    <p style="margin:12px 0 0;font-size:13px;color:#64748b">现金储备: ¥${balanced.cashReserve.toLocaleString()} | 覆盖 ${adviceData.marketOverview.sectorCount} 个行业</p>
+    <p style="margin:12px 0 0;font-size:13px;color:#64748b">现金储备: ¥${balanced.cashBudget.toLocaleString()} | 覆盖 ${adviceData.marketOverview.sectorCount} 个行业</p>
   </div>
 
   <div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:16px;font-size:13px;color:#92400e">

@@ -32,6 +32,7 @@ data/            # JSON 文件存储 (funds.json, advice.json)
 | `npm run build` | 构建前端生产包 |
 | `npm run start:bg` | 后台启动 server |
 | `npm run stop` | 停止后台 server |
+| `npm run logs` | 查看后台 server 日志 |
 
 测试尚未配置（待补充 Jest + React Testing Library）。
 
