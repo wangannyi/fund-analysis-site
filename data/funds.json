@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-04-20T08:23:05.218Z",
+  "updateTime": "2026-04-20T09:10:08.075Z",
   "totalFunds": 2962,
   "sectors": {
     "internet": {
@@ -7,84 +7,114 @@
       "totalCount": 99,
       "funds": [
         {
+          "code": "160629",
+          "name": "鹏华中证传媒指数(LOF)A",
+          "price": 1.3094,
+          "changePercent": 1.77,
+          "nav": 1.2872,
+          "fundType": "指数型-股票",
+          "volume": 1820,
+          "amount": 24,
+          "turnoverRate": 2.05
+        },
+        {
+          "code": "501007",
+          "name": "汇添富中证互联网医疗指数(LOF)A",
+          "price": 0.9324,
+          "changePercent": 1.58,
+          "nav": 0.9272,
+          "fundType": "指数型-股票",
+          "volume": 2217,
+          "amount": 20,
+          "turnoverRate": 1.69
+        },
+        {
+          "code": "501008",
+          "name": "汇添富中证互联网医疗指数(LOF)C",
+          "price": 0.9025,
+          "changePercent": 1.58,
+          "nav": 0.8975,
+          "fundType": "指数型-股票",
+          "volume": 2015,
+          "amount": 18,
+          "turnoverRate": 3.1
+        },
+        {
+          "code": "161025",
+          "name": "富国中证移动互联网指数(LOF)A",
+          "price": 1.3445,
+          "changePercent": 1.7,
+          "nav": 1.312,
+          "fundType": "指数型-股票",
+          "volume": 1267,
+          "amount": 17,
+          "turnoverRate": 0.3
+        },
+        {
           "code": "160626",
           "name": "鹏华中证信息技术指数(LOF)A",
           "price": 1.4365,
           "changePercent": 2.09,
-          "nav": 1.4071,
-          "fundType": "指数型-股票"
+          "nav": 1.3917,
+          "fundType": "指数型-股票",
+          "volume": 968,
+          "amount": 14,
+          "turnoverRate": 1.04
+        },
+        {
+          "code": "164818",
+          "name": "工银传媒指数A",
+          "price": 1.3171,
+          "changePercent": 1.77,
+          "nav": 1.2944,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
+        },
+        {
+          "code": "160636",
+          "name": "鹏华中证移动互联网指数(LOF)A",
+          "price": 1.2222,
+          "changePercent": 1.7,
+          "nav": 1.1922,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
+        },
+        {
+          "code": "160137",
+          "name": "南方中证互联网指数(LOF)A",
+          "price": 1.8528,
+          "changePercent": 1.57,
+          "nav": 1.7877,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "012040",
           "name": "鹏华中证信息技术指数(LOF)C",
           "price": 1.4753,
           "changePercent": 2.09,
-          "nav": 1.4451,
-          "fundType": "指数型-股票"
+          "nav": 1.4293,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "025136",
           "name": "鹏华中证信息技术指数(LOF)I",
           "price": 1.4043,
           "changePercent": 1.99,
-          "nav": 1.377,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "000942",
-          "name": "广发信息技术联接A",
-          "price": 1.7618,
-          "changePercent": 1.95,
-          "nav": 1.7281,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "002974",
-          "name": "广发信息技术联接C",
-          "price": 1.7308,
-          "changePercent": 1.95,
-          "nav": 1.6977,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "022106",
-          "name": "广发信息技术联接F",
-          "price": 1.7616,
-          "changePercent": 1.95,
-          "nav": 1.7279,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "021471",
-          "name": "华夏中证全指信息技术ETF发起式联接A",
-          "price": 1.5628,
-          "changePercent": 1.95,
-          "nav": 1.5329,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "021472",
-          "name": "华夏中证全指信息技术ETF发起式联接C",
-          "price": 1.5581,
-          "changePercent": 1.95,
-          "nav": 1.5283,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "021474",
-          "name": "华安上证科创板新一代信息技术ETF发起式联接A",
-          "price": 2.3019,
-          "changePercent": 1.91,
-          "nav": 2.2588,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "021475",
-          "name": "华安上证科创板新一代信息技术ETF发起式联接C",
-          "price": 2.2919,
-          "changePercent": 1.91,
-          "nav": 2.2489,
-          "fundType": "指数型-股票"
+          "nav": 1.362,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         }
       ]
     },
@@ -93,84 +123,114 @@
       "totalCount": 326,
       "funds": [
         {
+          "code": "161128",
+          "name": "易方达标普信息科技指数(QDII-LOF)A(人民币)",
+          "price": 5.9293,
+          "changePercent": 1.56,
+          "nav": 5.8384,
+          "fundType": "指数型-海外股票",
+          "volume": 110533,
+          "amount": 6630,
+          "turnoverRate": 2.29
+        },
+        {
+          "code": "161127",
+          "name": "易方达标普生物科技人民币A",
+          "price": 1.8664,
+          "changePercent": 1.67,
+          "nav": 1.8358,
+          "fundType": "指数型-海外股票",
+          "volume": 29659,
+          "amount": 549,
+          "turnoverRate": 2.37
+        },
+        {
+          "code": "161631",
+          "name": "融通人工智能指数(LOF)A",
+          "price": 2.7288,
+          "changePercent": 1.46,
+          "nav": 2.64,
+          "fundType": "指数型-股票",
+          "volume": 9294,
+          "amount": 251,
+          "turnoverRate": 3.09
+        },
+        {
+          "code": "167506",
+          "name": "安信深圳科技指数(LOF)A",
+          "price": 1.8523,
+          "changePercent": 0.54,
+          "nav": 1.8473,
+          "fundType": "指数型-股票",
+          "volume": 754,
+          "amount": 14,
+          "turnoverRate": 2.23
+        },
+        {
+          "code": "168701",
+          "name": "合煦智远金融科技指数(LOF)A",
+          "price": 1.132,
+          "changePercent": 1.12,
+          "nav": 1.1203,
+          "fundType": "指数型-股票",
+          "volume": 730,
+          "amount": 8,
+          "turnoverRate": 0.71
+        },
+        {
+          "code": "161033",
+          "name": "富国中证智能汽车(LOF)A",
+          "price": 2.0335,
+          "changePercent": 1.27,
+          "nav": 2.013,
+          "fundType": "指数型-股票",
+          "volume": 45,
+          "amount": 1,
+          "turnoverRate": 0.16
+        },
+        {
+          "code": "165524",
+          "name": "中信保诚中证智能家居指数(LOF)A",
+          "price": 1.3367,
+          "changePercent": 1.61,
+          "nav": 1.3026,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
+        },
+        {
+          "code": "160646",
+          "name": "鹏华中证沪港深科技龙头指数(LOF)A",
+          "price": 1.095,
+          "changePercent": 1.15,
+          "nav": 1.0829,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
+        },
+        {
           "code": "023989",
           "name": "博时上证科创板人工智能ETF发起式联接E",
           "price": 1.2765,
           "changePercent": 2.42,
-          "nav": 1.2463,
-          "fundType": "指数型-股票"
+          "nav": 1.243,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "023565",
           "name": "易方达科创人工智能ETF联接C",
           "price": 1.4035,
           "changePercent": 2.42,
-          "nav": 1.3703,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "023521",
-          "name": "博时上证科创板人工智能ETF发起式联接C",
-          "price": 1.2728,
-          "changePercent": 2.42,
-          "nav": 1.2427,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "023552",
-          "name": "银华上证科创板人工智能ETF发起式联接I",
-          "price": 1.2608,
-          "changePercent": 2.42,
-          "nav": 1.231,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "023520",
-          "name": "博时上证科创板人工智能ETF发起式联接A",
-          "price": 1.277,
-          "changePercent": 2.42,
-          "nav": 1.2468,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "023550",
-          "name": "银华上证科创板人工智能ETF发起式联接A",
-          "price": 1.2622,
-          "changePercent": 2.42,
-          "nav": 1.2323,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "023551",
-          "name": "银华上证科创板人工智能ETF发起式联接C",
-          "price": 1.2594,
-          "changePercent": 2.42,
-          "nav": 1.2296,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "024245",
-          "name": "广发上证科创板人工智能ETF发起式联接A",
-          "price": 1.4096,
-          "changePercent": 2.42,
-          "nav": 1.3763,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "023564",
-          "name": "易方达科创人工智能ETF联接A",
-          "price": 1.4075,
-          "changePercent": 2.42,
-          "nav": 1.3742,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "024776",
-          "name": "永赢上证科创板人工智能指数发起E",
-          "price": 1.2307,
-          "changePercent": 2.42,
-          "nav": 1.2016,
-          "fundType": "指数型-股票"
+          "nav": 1.3666,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         }
       ]
     },
@@ -183,80 +243,110 @@
           "name": "国泰A股电网设备ETF联接A",
           "price": 1.9991,
           "changePercent": 3.06,
-          "nav": 1.9398,
-          "fundType": "指数型-股票"
+          "nav": 1.9265,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "023639",
           "name": "国泰A股电网设备ETF联接C",
           "price": 1.9949,
           "changePercent": 3.06,
-          "nav": 1.9357,
-          "fundType": "指数型-股票"
+          "nav": 1.9225,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "025832",
           "name": "天弘电网设备特高压指数A",
           "price": 1.3698,
           "changePercent": 2.88,
-          "nav": 1.3315,
-          "fundType": "指数型-股票"
+          "nav": 1.3262,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "025833",
           "name": "天弘电网设备特高压指数C",
           "price": 1.3689,
           "changePercent": 2.88,
-          "nav": 1.3306,
-          "fundType": "指数型-股票"
+          "nav": 1.3252,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "025857",
           "name": "华夏中证电网设备主题ETF发起式联接C",
           "price": 1.3593,
           "changePercent": 2.87,
-          "nav": 1.3214,
-          "fundType": "指数型-股票"
+          "nav": 1.3161,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "025856",
           "name": "华夏中证电网设备主题ETF发起式联接A",
           "price": 1.3608,
           "changePercent": 2.87,
-          "nav": 1.3229,
-          "fundType": "指数型-股票"
+          "nav": 1.3176,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "016185",
           "name": "广发电力ETF联接A",
           "price": 1.1622,
           "changePercent": 1.13,
-          "nav": 1.1492,
-          "fundType": "指数型-股票"
+          "nav": 1.1508,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "016186",
           "name": "广发电力ETF联接C",
           "price": 1.1493,
           "changePercent": 1.13,
-          "nav": 1.1365,
-          "fundType": "指数型-股票"
+          "nav": 1.1381,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "017482",
           "name": "博时中证全指电力ETF发起式联接C",
           "price": 1.2173,
           "changePercent": 1.13,
-          "nav": 1.2037,
-          "fundType": "指数型-股票"
+          "nav": 1.205,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "017481",
           "name": "博时中证全指电力ETF发起式联接A",
           "price": 1.2292,
           "changePercent": 1.13,
-          "nav": 1.2155,
-          "fundType": "指数型-股票"
+          "nav": 1.2167,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         }
       ]
     },
@@ -265,84 +355,114 @@
       "totalCount": 60,
       "funds": [
         {
+          "code": "164905",
+          "name": "交银国证新能源指数(LOF)A",
+          "price": 1.2925,
+          "changePercent": 0.26,
+          "nav": 1.2944,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
+        },
+        {
           "code": "016916",
           "name": "中金华证清洁能源指数发起C",
           "price": 0.6823,
           "changePercent": 1.64,
-          "nav": 0.6713,
-          "fundType": "指数型-股票"
+          "nav": 0.6707,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "016915",
           "name": "中金华证清洁能源指数发起A",
           "price": 0.6883,
           "changePercent": 1.64,
-          "nav": 0.6772,
-          "fundType": "指数型-股票"
+          "nav": 0.6765,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "011102",
           "name": "天弘中证光伏产业指数A",
           "price": 0.9244,
           "changePercent": 1.33,
-          "nav": 0.9123,
-          "fundType": "指数型-股票"
+          "nav": 0.9112,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "011966",
           "name": "招商中证光伏产业ETF联接A",
           "price": 0.7676,
           "changePercent": 1.33,
-          "nav": 0.7575,
-          "fundType": "指数型-股票"
+          "nav": 0.7566,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "011103",
           "name": "天弘中证光伏产业指数C",
           "price": 0.9148,
           "changePercent": 1.33,
-          "nav": 0.9028,
-          "fundType": "指数型-股票"
+          "nav": 0.9017,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "011967",
           "name": "招商中证光伏产业ETF联接C",
           "price": 0.7528,
           "changePercent": 1.33,
-          "nav": 0.7429,
-          "fundType": "指数型-股票"
+          "nav": 0.7421,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "012364",
           "name": "广发中证光伏产业指数A",
           "price": 0.8184,
           "changePercent": 1.33,
-          "nav": 0.8077,
-          "fundType": "指数型-股票"
+          "nav": 0.8066,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "012722",
           "name": "平安中证光伏产业指数A",
           "price": 0.7567,
           "changePercent": 1.33,
-          "nav": 0.7468,
-          "fundType": "指数型-股票"
+          "nav": 0.7459,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         },
         {
           "code": "012365",
           "name": "广发中证光伏产业指数C",
           "price": 0.8106,
           "changePercent": 1.33,
-          "nav": 0.8,
-          "fundType": "指数型-股票"
-        },
-        {
-          "code": "012886",
-          "name": "华夏中证光伏产业ETF发起式联接C",
-          "price": 0.6803,
-          "changePercent": 1.33,
-          "nav": 0.6714,
-          "fundType": "指数型-股票"
+          "nav": 0.799,
+          "fundType": "指数型-股票",
+          "volume": 0,
+          "amount": 0,
+          "turnoverRate": 0
         }
       ]
     }

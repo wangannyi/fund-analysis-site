@@ -75,8 +75,59 @@ async function fetchEtfList() {
   }
 }
 
+// 从腾讯行情接口获取场内ETF交易数据（成交额、换手率等）
+async function fetchTradeData(codes) {
+  if (!codes || codes.length === 0) return {};
+
+  // 腾讯接口支持批量查询，格式: sh510300,sz159915
+  const queryList = codes.map((code) => {
+    // 6开头为上海，其他为深圳
+    const prefix = code.startsWith('5') || code.startsWith('6') ? 'sh' : 'sz';
+    return `${prefix}${code}`;
+  });
+
+  // 每次最多查50个，分批
+  const batchSize = 50;
+  const result = {};
+
+  for (let i = 0; i < queryList.length; i += batchSize) {
+    const batch = queryList.slice(i, i + batchSize);
+    try {
+      const url = `http://qt.gtimg.cn/q=${batch.join(',')}`;
+      const response = await axios.get(url, {
+        headers: HEADERS,
+        timeout: 10000,
+        responseType: 'arraybuffer',
+      });
+
+      const text = new TextDecoder('gbk').decode(response.data);
+      const lines = text.split(';').filter((l) => l.includes('~'));
+
+      for (const line of lines) {
+        const parts = line.split('~');
+        if (parts.length < 50) continue;
+        const code = parts[2];
+        result[code] = {
+          volume: parseInt(parts[6]) || 0,        // 成交量(手)
+          amount: parseFloat(parts[37]) || 0,     // 成交额(万元)
+          turnoverRate: parseFloat(parts[38]) || 0, // 换手率%
+        };
+      }
+
+      // 请求间隔，避免频率限制
+      if (i + batchSize < queryList.length) {
+        await new Promise((r) => setTimeout(r, 500));
+      }
+    } catch (error) {
+      console.error(`获取交易数据失败(批次${i / batchSize + 1}):`, error.message);
+    }
+  }
+
+  return result;
+}
+
 // 按行业分类基金
-function classifyFunds(funds) {
+function classifyFunds(funds, tradeData = {}) {
   const sectors = {};
 
   for (const [sectorKey, sectorInfo] of Object.entries(SECTOR_KEYWORDS)) {
@@ -84,19 +135,37 @@ function classifyFunds(funds) {
       sectorInfo.keywords.some((keyword) => fund.name && fund.name.includes(keyword))
     );
 
-    // 按涨跌幅降序排列，取Top10
-    const top10 = matched
+    // 区分场内ETF和场外基金
+    const withTrade = matched.filter((f) => tradeData[f.code]);
+    const withoutTrade = matched.filter((f) => !tradeData[f.code]);
+
+    // 优先展示有交易数据的场内ETF，按成交额降序
+    const sortedTrade = withTrade
       .filter((f) => !isNaN(f.changeRate))
-      .sort((a, b) => b.changeRate - a.changeRate)
-      .slice(0, 10)
-      .map((f) => ({
+      .sort((a, b) => (tradeData[b.code]?.amount || 0) - (tradeData[a.code]?.amount || 0));
+
+    // 场外基金按涨跌幅降序
+    const sortedOther = withoutTrade
+      .filter((f) => !isNaN(f.changeRate))
+      .sort((a, b) => b.changeRate - a.changeRate);
+
+    // 场内ETF优先，不足10个用场外基金补充
+    const combined = [...sortedTrade, ...sortedOther].slice(0, 10);
+
+    const top10 = combined.map((f) => {
+      const trade = tradeData[f.code] || {};
+      return {
         code: f.code,
         name: f.name,
         price: f.price,
         changePercent: f.changeRate,
         nav: f.nav,
         fundType: f.fundType,
-      }));
+        volume: trade.volume || 0,
+        amount: trade.amount || 0,
+        turnoverRate: trade.turnoverRate || 0,
+      };
+    });
 
     sectors[sectorKey] = {
       name: sectorInfo.name,
@@ -120,7 +189,19 @@ async function scrapeAndSave() {
 
   console.log(`获取到 ${allFunds.length} 只ETF基金`);
 
-  const sectors = classifyFunds(allFunds);
+  // 获取场内ETF的交易数据（成交额、换手率）
+  // 场内基金代码: 5xxxxx(上海ETF), 1xxxxx(深圳ETF/LOF), 16xxxx(LOF)
+  const etfCodes = allFunds
+    .filter((f) => {
+      if (!f.code) return false;
+      return f.code.startsWith('5') || f.code.startsWith('15') || f.code.startsWith('16');
+    })
+    .map((f) => f.code);
+  console.log(`尝试获取 ${etfCodes.length} 只场内ETF交易数据...`);
+  const tradeData = await fetchTradeData(etfCodes);
+  console.log(`成功获取 ${Object.keys(tradeData).length} 只ETF交易数据`);
+
+  const sectors = classifyFunds(allFunds, tradeData);
 
   const result = {
     updateTime: new Date().toISOString(),
