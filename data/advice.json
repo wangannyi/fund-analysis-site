@@ -1,0 +1,239 @@
+{
+  "updateTime": "2026-04-20T08:23:05.218Z",
+  "capital": 100000,
+  "marketOverview": {
+    "totalCapital": 100000,
+    "sectorCount": 4,
+    "totalFunds": 514
+  },
+  "profiles": {
+    "conservative": {
+      "name": "保守型",
+      "riskLevel": "低风险",
+      "description": "追求稳健收益，控制回撤。适合风险承受能力较低的投资者。",
+      "allocation": {
+        "etf": 0.3,
+        "bond": 0.5,
+        "cash": 0.2
+      },
+      "maxSingleSector": 0.15,
+      "preferSectors": [
+        "power",
+        "energy"
+      ],
+      "etfBudget": 30000,
+      "bondBudget": 50000,
+      "cashBudget": 20000,
+      "recommendations": [
+        {
+          "code": "023638",
+          "name": "国泰A股电网设备ETF联接A",
+          "sector": "电力",
+          "changePercent": 3.06,
+          "score": 45,
+          "amount": 7500,
+          "reason": "电力行业ETF，近期涨幅领先"
+        },
+        {
+          "code": "023639",
+          "name": "国泰A股电网设备ETF联接C",
+          "sector": "电力",
+          "changePercent": 3.06,
+          "score": 45,
+          "amount": 7500,
+          "reason": "电力行业ETF，近期涨幅领先"
+        },
+        {
+          "code": "016916",
+          "name": "中金华证清洁能源指数发起C",
+          "sector": "新能源",
+          "changePercent": 1.64,
+          "score": 35,
+          "amount": 7500,
+          "reason": "新能源行业ETF，表现稳健"
+        },
+        {
+          "code": "016915",
+          "name": "中金华证清洁能源指数发起A",
+          "sector": "新能源",
+          "changePercent": 1.64,
+          "score": 35,
+          "amount": 7500,
+          "reason": "新能源行业ETF，表现稳健"
+        }
+      ],
+      "dipPlan": "建议每周定投 ¥100，持续 6-12 个月，分散买入时点风险。"
+    },
+    "balanced": {
+      "name": "均衡型",
+      "riskLevel": "中风险",
+      "description": "平衡收益与风险，兼顾成长与稳健。适合大多数投资者。",
+      "allocation": {
+        "etf": 0.5,
+        "bond": 0.3,
+        "cash": 0.2
+      },
+      "maxSingleSector": 0.25,
+      "preferSectors": [
+        "power",
+        "energy",
+        "internet"
+      ],
+      "etfBudget": 50000,
+      "bondBudget": 30000,
+      "cashBudget": 20000,
+      "recommendations": [
+        {
+          "code": "023638",
+          "name": "国泰A股电网设备ETF联接A",
+          "sector": "电力",
+          "changePercent": 3.06,
+          "score": 45,
+          "amount": 8300,
+          "reason": "电力行业ETF，近期涨幅领先"
+        },
+        {
+          "code": "023639",
+          "name": "国泰A股电网设备ETF联接C",
+          "sector": "电力",
+          "changePercent": 3.06,
+          "score": 45,
+          "amount": 8300,
+          "reason": "电力行业ETF，近期涨幅领先"
+        },
+        {
+          "code": "016916",
+          "name": "中金华证清洁能源指数发起C",
+          "sector": "新能源",
+          "changePercent": 1.64,
+          "score": 35,
+          "amount": 8300,
+          "reason": "新能源行业ETF，表现稳健"
+        },
+        {
+          "code": "016915",
+          "name": "中金华证清洁能源指数发起A",
+          "sector": "新能源",
+          "changePercent": 1.64,
+          "score": 35,
+          "amount": 8300,
+          "reason": "新能源行业ETF，表现稳健"
+        },
+        {
+          "code": "160626",
+          "name": "鹏华中证信息技术指数(LOF)A",
+          "sector": "互联网",
+          "changePercent": 2.09,
+          "score": 35,
+          "amount": 8300,
+          "reason": "互联网行业ETF，表现稳健"
+        },
+        {
+          "code": "012040",
+          "name": "鹏华中证信息技术指数(LOF)C",
+          "sector": "互联网",
+          "changePercent": 2.09,
+          "score": 35,
+          "amount": 8300,
+          "reason": "互联网行业ETF，表现稳健"
+        }
+      ],
+      "dipPlan": "建议每周定投 ¥200，持续 6-12 个月，分散买入时点风险。"
+    },
+    "aggressive": {
+      "name": "进取型",
+      "riskLevel": "高风险",
+      "description": "追求高收益，承受较大波动。适合风险承受能力强的投资者。",
+      "allocation": {
+        "etf": 0.7,
+        "bond": 0.2,
+        "cash": 0.1
+      },
+      "maxSingleSector": 0.3,
+      "preferSectors": [
+        "ai",
+        "internet",
+        "energy",
+        "power"
+      ],
+      "etfBudget": 70000,
+      "bondBudget": 20000,
+      "cashBudget": 10000,
+      "recommendations": [
+        {
+          "code": "023989",
+          "name": "博时上证科创板人工智能ETF发起式联接E",
+          "sector": "人工智能",
+          "changePercent": 2.42,
+          "score": 35,
+          "amount": 8800,
+          "reason": "人工智能行业ETF，表现稳健"
+        },
+        {
+          "code": "023565",
+          "name": "易方达科创人工智能ETF联接C",
+          "sector": "人工智能",
+          "changePercent": 2.42,
+          "score": 35,
+          "amount": 8800,
+          "reason": "人工智能行业ETF，表现稳健"
+        },
+        {
+          "code": "160626",
+          "name": "鹏华中证信息技术指数(LOF)A",
+          "sector": "互联网",
+          "changePercent": 2.09,
+          "score": 35,
+          "amount": 8800,
+          "reason": "互联网行业ETF，表现稳健"
+        },
+        {
+          "code": "012040",
+          "name": "鹏华中证信息技术指数(LOF)C",
+          "sector": "互联网",
+          "changePercent": 2.09,
+          "score": 35,
+          "amount": 8800,
+          "reason": "互联网行业ETF，表现稳健"
+        },
+        {
+          "code": "016916",
+          "name": "中金华证清洁能源指数发起C",
+          "sector": "新能源",
+          "changePercent": 1.64,
+          "score": 35,
+          "amount": 8800,
+          "reason": "新能源行业ETF，表现稳健"
+        },
+        {
+          "code": "016915",
+          "name": "中金华证清洁能源指数发起A",
+          "sector": "新能源",
+          "changePercent": 1.64,
+          "score": 35,
+          "amount": 8800,
+          "reason": "新能源行业ETF，表现稳健"
+        },
+        {
+          "code": "023638",
+          "name": "国泰A股电网设备ETF联接A",
+          "sector": "电力",
+          "changePercent": 3.06,
+          "score": 45,
+          "amount": 8800,
+          "reason": "电力行业ETF，近期涨幅领先"
+        },
+        {
+          "code": "023639",
+          "name": "国泰A股电网设备ETF联接C",
+          "sector": "电力",
+          "changePercent": 3.06,
+          "score": 45,
+          "amount": 8800,
+          "reason": "电力行业ETF，近期涨幅领先"
+        }
+      ],
+      "dipPlan": "建议每周定投 ¥300，持续 6-12 个月，分散买入时点风险。"
+    }
+  }
+}

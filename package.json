@@ -1,0 +1,36 @@
+{
+  "name": "fund-analysis-site",
+  "version": "1.0.0",
+  "description": "基金分析网站 - 场内ETF数据追踪与投资建议",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/index.js",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "start": "node server/index.js",
+    "start:bg": "nohup node server/index.js > server.log 2>&1 & echo $! > .server.pid && echo 'Server started (PID:' $(cat .server.pid) ')'",
+    "stop": "kill $(cat .server.pid 2>/dev/null) 2>/dev/null && rm -f .server.pid && echo 'Server stopped' || echo 'No server running'",
+    "logs": "tail -f server.log",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fund",
+    "etf",
+    "analysis"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.15.1",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^8.0.5"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.14"
+  }
+}
