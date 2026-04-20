@@ -4,7 +4,7 @@ const path = require('path');
 const FUNDS_FILE = path.join(__dirname, '..', 'data', 'funds.json');
 const ADVICE_FILE = path.join(__dirname, '..', 'data', 'advice.json');
 
-const TOTAL_CAPITAL = 100000; // 10万本金
+const TOTAL_CAPITAL = 100000; // 默认10万本金
 
 // 风险偏好配置
 const RISK_PROFILES = {
@@ -66,22 +66,24 @@ function scoreFund(fund) {
 }
 
 // 生成投资建议
-function generateAdvice(fundsData) {
+function generateAdvice(fundsData, capital, { saveToFile = true } = {}) {
+  capital = capital || TOTAL_CAPITAL;
+
   if (!fundsData || !fundsData.sectors) {
     return { error: '无基金数据' };
   }
 
   const advice = {
     updateTime: new Date().toISOString(),
-    capital: TOTAL_CAPITAL,
-    marketOverview: generateMarketOverview(fundsData.sectors),
+    capital,
+    marketOverview: generateMarketOverview(fundsData.sectors, capital),
     profiles: {},
   };
 
   for (const [profileKey, profile] of Object.entries(RISK_PROFILES)) {
-    const etfBudget = TOTAL_CAPITAL * profile.allocation.etf;
-    const bondBudget = TOTAL_CAPITAL * profile.allocation.bond;
-    const cashBudget = TOTAL_CAPITAL * profile.allocation.cash;
+    const etfBudget = capital * profile.allocation.etf;
+    const bondBudget = capital * profile.allocation.bond;
+    const cashBudget = capital * profile.allocation.cash;
 
     // 从偏好行业中选基金
     const recommendations = [];
@@ -100,7 +102,7 @@ function generateAdvice(fundsData) {
       const topFunds = scoredFunds.slice(0, 2);
       const perFundBudget = Math.min(
         sectorBudget / topFunds.length,
-        TOTAL_CAPITAL * profile.maxSingleSector
+        capital * profile.maxSingleSector
       );
 
       for (const fund of topFunds) {
@@ -126,19 +128,21 @@ function generateAdvice(fundsData) {
     };
   }
 
-  // 保存
-  const dataDir = path.dirname(ADVICE_FILE);
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
+  // 保存（仅默认调用时写文件）
+  if (saveToFile) {
+    const dataDir = path.dirname(ADVICE_FILE);
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+    }
+    fs.writeFileSync(ADVICE_FILE, JSON.stringify(advice, null, 2), 'utf-8');
+    console.log(`投资建议已保存到 ${ADVICE_FILE}`);
   }
-  fs.writeFileSync(ADVICE_FILE, JSON.stringify(advice, null, 2), 'utf-8');
-  console.log(`投资建议已保存到 ${ADVICE_FILE}`);
 
   return advice;
 }
 
 // 生成市场概览
-function generateMarketOverview(sectors) {
+function generateMarketOverview(sectors, capital) {
   let totalFunds = 0;
   const sectorCount = Object.keys(sectors).length;
 
@@ -147,7 +151,7 @@ function generateMarketOverview(sectors) {
   }
 
   return {
-    totalCapital: TOTAL_CAPITAL,
+    totalCapital: capital,
     sectorCount,
     totalFunds,
   };

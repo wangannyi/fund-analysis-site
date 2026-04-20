@@ -1,8 +1,41 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
+
+const SORT_OPTIONS = [
+  { key: 'changePercent', label: '涨跌幅', desc: true },
+  { key: 'price', label: '价格', desc: true },
+  { key: 'amount', label: '成交额', desc: true },
+  { key: 'turnoverRate', label: '换手率', desc: true },
+];
 
 export default function FundTable({ funds, sectorColor }) {
+  const [sortKey, setSortKey] = useState('changePercent');
+  const [sortDesc, setSortDesc] = useState(true);
+
+  const sortedFunds = useMemo(() => {
+    if (!funds || funds.length === 0) return [];
+    return [...funds].sort((a, b) => {
+      const va = parseFloat(a[sortKey]) || 0;
+      const vb = parseFloat(b[sortKey]) || 0;
+      return sortDesc ? vb - va : va - vb;
+    });
+  }, [funds, sortKey, sortDesc]);
+
   if (!funds || funds.length === 0) {
     return <div className="empty-state">暂无该板块基金数据</div>;
+  }
+
+  function handleSort(key) {
+    if (sortKey === key) {
+      setSortDesc(!sortDesc);
+    } else {
+      setSortKey(key);
+      setSortDesc(SORT_OPTIONS.find((o) => o.key === key)?.desc ?? true);
+    }
+  }
+
+  function sortIndicator(key) {
+    if (sortKey !== key) return '';
+    return sortDesc ? ' ↓' : ' ↑';
   }
 
   return (
@@ -13,14 +46,22 @@ export default function FundTable({ funds, sectorColor }) {
             <th>排名</th>
             <th>代码</th>
             <th>名称</th>
-            <th>最新价</th>
-            <th>涨跌幅</th>
-            <th>成交额</th>
-            <th>换手率</th>
+            <th className="sortable" onClick={() => handleSort('price')}>
+              最新价{sortIndicator('price')}
+            </th>
+            <th className="sortable" onClick={() => handleSort('changePercent')}>
+              涨跌幅{sortIndicator('changePercent')}
+            </th>
+            <th className="sortable" onClick={() => handleSort('amount')}>
+              成交额{sortIndicator('amount')}
+            </th>
+            <th className="sortable" onClick={() => handleSort('turnoverRate')}>
+              换手率{sortIndicator('turnoverRate')}
+            </th>
           </tr>
         </thead>
         <tbody>
-          {funds.map((fund, index) => (
+          {sortedFunds.map((fund, index) => (
             <tr key={fund.code}>
               <td>
                 <span

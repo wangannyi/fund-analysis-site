@@ -29,9 +29,22 @@ app.get('/api/v1/funds', (req, res) => {
   }
 });
 
-// API: 获取投资建议
+// API: 获取投资建议（支持 ?capital=xxx 自定义金额）
 app.get('/api/v1/advice', (req, res) => {
   try {
+    const customCapital = parseInt(req.query.capital);
+
+    // 有自定义金额时，实时计算
+    if (customCapital && customCapital > 0) {
+      if (!fs.existsSync(FUNDS_FILE)) {
+        return res.status(404).json({ error: '基金数据尚未生成' });
+      }
+      const fundsData = JSON.parse(fs.readFileSync(FUNDS_FILE, 'utf-8'));
+      const advice = generateAdvice(fundsData, customCapital, { saveToFile: false });
+      return res.json(advice);
+    }
+
+    // 默认返回缓存的建议
     if (!fs.existsSync(ADVICE_FILE)) {
       return res.status(404).json({ error: '投资建议尚未生成' });
     }

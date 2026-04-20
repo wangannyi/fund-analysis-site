@@ -3,3 +3,14 @@
 📊 API: http://localhost:3001/api/v1/funds
 💡 建议: http://localhost:3001/api/v1/advice
 已有数据文件，跳过初始抓取
+[2026-04-20T09:37:35.327Z] 开始抓取基金数据...
+  API 返回 10000 只基金，筛选出 2962 只指数型
+获取到 2962 只ETF基金
+尝试获取 148 只场内ETF交易数据...
+成功获取 119 只ETF交易数据
+数据已保存到 /home/anny/workspaces/vibecoding_practice/my_site/data/funds.json
+  互联网: 匹配 99 只，Top10 已记录
+  人工智能: 匹配 326 只，Top10 已记录
+  电力: 匹配 29 只，Top10 已记录
+  新能源: 匹配 60 只，Top10 已记录
+投资建议已保存到 /home/anny/workspaces/vibecoding_practice/my_site/data/advice.json

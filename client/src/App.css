@@ -190,6 +190,58 @@ body {
   color: var(--text-primary);
 }
 
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.section-header .section-title {
+  margin-bottom: 0;
+}
+
+.capital-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.capital-input input {
+  width: 120px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.capital-input input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+.capital-input button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: var(--radius);
+  background: #3b82f6;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.capital-input button:hover {
+  background: #2563eb;
+}
+
 /* Fund Table */
 .fund-table-wrapper {
   overflow-x: auto;
@@ -212,6 +264,16 @@ body {
   color: var(--text-secondary);
   border-bottom: 1px solid var(--border);
   white-space: nowrap;
+}
+
+.fund-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.fund-table th.sortable:hover {
+  color: var(--accent, #3b82f6);
 }
 
 .fund-table td {

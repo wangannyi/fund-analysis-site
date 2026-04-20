@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-04-20T08:54:23.600Z",
+  "updateTime": "2026-04-20T09:37:38.253Z",
   "capital": 100000,
   "marketOverview": {
     "totalCapital": 100000,
@@ -120,19 +120,19 @@
           "reason": "新能源行业ETF，表现稳健"
         },
         {
-          "code": "160626",
-          "name": "鹏华中证信息技术指数(LOF)A",
+          "code": "160629",
+          "name": "鹏华中证传媒指数(LOF)A",
           "sector": "互联网",
-          "changePercent": 2.09,
+          "changePercent": 1.77,
           "score": 35,
           "amount": 8300,
           "reason": "互联网行业ETF，表现稳健"
         },
         {
-          "code": "012040",
-          "name": "鹏华中证信息技术指数(LOF)C",
+          "code": "501007",
+          "name": "汇添富中证互联网医疗指数(LOF)A",
           "sector": "互联网",
-          "changePercent": 2.09,
+          "changePercent": 1.58,
           "score": 35,
           "amount": 8300,
           "reason": "互联网行业ETF，表现稳健"
@@ -161,37 +161,37 @@
       "cashBudget": 10000,
       "recommendations": [
         {
-          "code": "023989",
-          "name": "博时上证科创板人工智能ETF发起式联接E",
+          "code": "161128",
+          "name": "易方达标普信息科技指数(QDII-LOF)A(人民币)",
           "sector": "人工智能",
-          "changePercent": 2.42,
+          "changePercent": 1.56,
           "score": 35,
           "amount": 8800,
           "reason": "人工智能行业ETF，表现稳健"
         },
         {
-          "code": "023565",
-          "name": "易方达科创人工智能ETF联接C",
+          "code": "161127",
+          "name": "易方达标普生物科技人民币A",
           "sector": "人工智能",
-          "changePercent": 2.42,
+          "changePercent": 1.67,
           "score": 35,
           "amount": 8800,
           "reason": "人工智能行业ETF，表现稳健"
         },
         {
-          "code": "160626",
-          "name": "鹏华中证信息技术指数(LOF)A",
+          "code": "160629",
+          "name": "鹏华中证传媒指数(LOF)A",
           "sector": "互联网",
-          "changePercent": 2.09,
+          "changePercent": 1.77,
           "score": 35,
           "amount": 8800,
           "reason": "互联网行业ETF，表现稳健"
         },
         {
-          "code": "012040",
-          "name": "鹏华中证信息技术指数(LOF)C",
+          "code": "501007",
+          "name": "汇添富中证互联网医疗指数(LOF)A",
           "sector": "互联网",
-          "changePercent": 2.09,
+          "changePercent": 1.58,
           "score": 35,
           "amount": 8800,
           "reason": "互联网行业ETF，表现稳健"

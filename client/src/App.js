@@ -22,6 +22,8 @@ function App() {
   const [darkMode, setDarkMode] = useState(
     window.matchMedia('(prefers-color-scheme: dark)').matches
   );
+  const [capital, setCapital] = useState(100000);
+  const [capitalInput, setCapitalInput] = useState('100000');
 
   useEffect(() => {
     fetchData();
@@ -64,6 +66,20 @@ function App() {
       setError('刷新失败');
     } finally {
       setRefreshing(false);
+    }
+  }
+
+  async function handleCapitalChange() {
+    const val = parseInt(capitalInput);
+    if (!val || val <= 0) return;
+    setCapital(val);
+    try {
+      const res = await fetch(`/api/v1/advice?capital=${val}`);
+      if (res.ok) {
+        setAdviceData(await res.json());
+      }
+    } catch (err) {
+      setError('更新投资建议失败');
     }
   }
 
@@ -120,7 +136,21 @@ function App() {
 
       {/* 投资建议 */}
       <section className="section">
-        <h2 className="section-title">💰 投资建议（10万本金）</h2>
+        <div className="section-header">
+          <h2 className="section-title">💰 投资建议</h2>
+          <div className="capital-input">
+            <label>投资金额：¥</label>
+            <input
+              type="number"
+              min="1000"
+              step="1000"
+              value={capitalInput}
+              onChange={(e) => setCapitalInput(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleCapitalChange()}
+            />
+            <button onClick={handleCapitalChange}>更新</button>
+          </div>
+        </div>
         <div className="profile-tabs">
           {adviceData?.profiles &&
             Object.entries(adviceData.profiles).map(([key, profile]) => (
