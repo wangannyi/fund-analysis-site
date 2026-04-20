@@ -57,6 +57,20 @@ app.post('/api/v1/refresh', async (req, res) => {
   }
 });
 
+// API: 手动触发邮件推送
+app.post('/api/v1/notify', async (req, res) => {
+  try {
+    const result = await sendDailyReport();
+    if (result) {
+      res.json({ success: true, message: '邮件已发送' });
+    } else {
+      res.status(500).json({ error: '邮件发送失败' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: '发送失败', message: error.message });
+  }
+});
+
 // 前端路由回退
 app.get('/{*path}', (req, res) => {
   const indexPath = path.join(clientBuildPath, 'index.html');

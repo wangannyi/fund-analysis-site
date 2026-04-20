@@ -49,6 +49,20 @@ npm run dev
 | `npm run stop` | 停止后台 server |
 | `npm run logs` | 查看 server 日志 |
 
+## 手动更新数据
+
+Server 运行时，发送 POST 请求即可手动触发数据刷新 + 邮件推送：
+
+```bash
+# 刷新数据（抓取最新 ETF 数据 + 生成投资建议）
+curl -X POST http://localhost:3001/api/v1/refresh
+
+# 手动发送邮件报告
+curl -X POST http://localhost:3001/api/v1/notify
+```
+
+自动定时任务：每天早上 10:00 自动执行数据更新 + 邮件推送（需 server 保持运行）。
+
 ## 项目结构
 
 ```
@@ -75,6 +89,7 @@ data/
 | GET | `/api/v1/funds` | 获取基金数据 |
 | GET | `/api/v1/advice` | 获取投资建议 |
 | POST | `/api/v1/refresh` | 手动触发数据刷新 |
+| POST | `/api/v1/notify` | 手动触发邮件推送 |
 
 ## 环境变量
 
